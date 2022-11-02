@@ -6,6 +6,11 @@ plugins {
 android {
     compileSdk 32
 
+    buildFeatures{
+
+        viewBinding true
+    }
+
     defaultConfig {
         applicationId "ni.edu.uca.msclases"
         minSdk 21

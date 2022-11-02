@@ -25,14 +25,15 @@
         app:layout_constraintVertical_bias="0.1" />
 
 
-    <TextView
+    <Button
+        android:id="@+id/btnIniciar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="50dp"
         android:text="¡Bienvenido!"
         android:textAlignment="center"
         android:textColor="@color/black"
-        android:textSize="45dp"
+        android:textSize="30dp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
