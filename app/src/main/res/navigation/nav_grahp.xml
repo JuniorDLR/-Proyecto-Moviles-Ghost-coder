@@ -55,7 +55,7 @@
         android:label="fragment_apunte"
         tools:layout="@layout/fragment_apunte" >
         <action
-            android:id="@+id/action_apunte_to_agregar_apunte"
+            android:id="@+id/action_apunte_to_agregar_apunten"
             app:destination="@id/agregar_apunte" />
         <action
             android:id="@+id/action_apunte_to_vaciar_apunte"

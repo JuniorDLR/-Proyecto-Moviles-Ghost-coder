@@ -37,6 +37,9 @@ class Menu : Fragment() {
         return fbinding.root
 
     }
+    fun salir(){
+        val num= 1
+    }
 
     private fun iniciar() {
         fbinding.btnHorario.setOnClickListener {
