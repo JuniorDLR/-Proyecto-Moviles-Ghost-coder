@@ -58,14 +58,8 @@
             android:id="@+id/action_apunte_to_agregar_apunten"
             app:destination="@id/agregar_apunte" />
         <action
-            android:id="@+id/action_apunte_to_vaciar_apunte"
-            app:destination="@id/vaciar_apunte" />
-        <action
             android:id="@+id/action_apunte_to_editar_apunte"
             app:destination="@id/editar_apunte" />
-        <action
-            android:id="@+id/action_apunte_to_eliminar_apunte"
-            app:destination="@id/eliminar_apunte" />
     </fragment>
     <fragment
         android:id="@+id/contacto"
@@ -120,16 +114,6 @@
         android:name="ni.edu.uca.msclases.Editar_apunte"
         android:label="fragment_editar_apunte"
         tools:layout="@layout/fragment_editar_apunte" />
-    <fragment
-        android:id="@+id/eliminar_apunte"
-        android:name="ni.edu.uca.msclases.Eliminar_apunte"
-        android:label="fragment_eliminar_apunte"
-        tools:layout="@layout/fragment_eliminar_apunte" />
-    <fragment
-        android:id="@+id/vaciar_apunte"
-        android:name="ni.edu.uca.msclases.Vaciar_apunte"
-        android:label="fragment_vaciar_apunte"
-        tools:layout="@layout/fragment_vaciar_apunte" />
     <fragment
         android:id="@+id/agregar_contacto"
         android:name="ni.edu.uca.msclases.Agregar_contacto"

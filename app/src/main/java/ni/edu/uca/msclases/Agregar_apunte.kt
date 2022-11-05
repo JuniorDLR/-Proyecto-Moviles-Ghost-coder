@@ -5,19 +5,16 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.navigation.Navigation
+import ni.edu.uca.msclases.databinding.FragmentAgregarApunteBinding
 
-// TODO: Rename parameter arguments, choose names that match
-// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
+
 private const val ARG_PARAM1 = "param1"
 private const val ARG_PARAM2 = "param2"
 
-/**
- * A simple [Fragment] subclass.
- * Use the [Agregar_apunte.newInstance] factory method to
- * create an instance of this fragment.
- */
+
 class Agregar_apunte : Fragment() {
-    // TODO: Rename and change types of parameters
+    lateinit var fbinding :FragmentAgregarApunteBinding
     private var param1: String? = null
     private var param2: String? = null
 
@@ -33,8 +30,15 @@ class Agregar_apunte : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_agregar_apunte, container, false)
+        fbinding = FragmentAgregarApunteBinding.inflate(layoutInflater)
+        iniciar()
+        return fbinding.root
+    }
+
+    private fun iniciar() {
+        fbinding.btnIzquierdaApunte.setOnClickListener {
+            Navigation.findNavController(fbinding.root).navigate(R.id.apunte)
+        }
     }
 
     companion object {

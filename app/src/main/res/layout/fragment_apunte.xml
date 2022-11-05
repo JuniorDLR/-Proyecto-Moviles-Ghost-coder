@@ -6,25 +6,53 @@
     android:layout_height="match_parent"
     tools:context=".Apunte">
 
-    <TextView
-        android:id="@+id/tvApuntes"
+
+
+    <LinearLayout
+        android:id="@+id/Apunntes"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/apuntes"
-        android:textAlignment="center"
-        android:textSize="40sp"
-        app:layout_constraintTop_toTopOf="parent"
+        android:orientation="horizontal"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"/>
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
-    <EditText
-        android:id="@+id/etApuntes"
+
+
+        <Button
+            android:id="@+id/btnizquierda"
+            android:layout_width="100dp"
+            android:layout_height="match_parent"
+            android:background="@drawable/izquierda"/>
+
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="APUNTES"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            android:textAlignment="center"
+            android:textSize="48sp" />
+
+        <Button
+            android:id="@+id/btnAgregar"
+            android:layout_width="100dp"
+            android:layout_height="match_parent"
+            android:background="@drawable/ic_baseline_note_add_24"/>
+
+
+
+
+    </LinearLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recycleViewApunte"
         android:layout_width="match_parent"
-        android:layout_height="500dp"
-        app:layout_constraintTop_toBottomOf="@id/tvApuntes"/>
-
-
-
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/Apunntes"/>
 
 
 
