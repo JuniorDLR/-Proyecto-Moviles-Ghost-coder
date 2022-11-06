@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/bg_color"
     tools:context=".Menu">
 
 <TextView
@@ -14,7 +15,8 @@
     android:layout_height="wrap_content"
     android:text="MIS CLASES"
     android:textAlignment="center"
-    android:textSize="50dp"/>
+    android:textSize="50dp"
+    tools:ignore="MissingConstraints" />
 
     <LinearLayout
         android:id="@+id/lhorario"
