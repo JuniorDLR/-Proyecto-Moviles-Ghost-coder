@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_grahp"
-    app:startDestination="@id/splash">
+    app:startDestination="@id/horario">
     <fragment
         android:id="@+id/splash"
         android:name="ni.edu.uca.msclases.Splash"
@@ -41,10 +41,13 @@
 
         <action
             android:id="@+id/action_horario_to_agregar_horario"
-            app:destination="@id/agregar_horario" />
+            app:destination="@id/agregarHorario" />
         <action
             android:id="@+id/action_horario_to_editar_horario"
             app:destination="@id/editar_horario" />
+        <action
+            android:id="@+id/action_horario_to_agregarHorario"
+            app:destination="@id/agregarHorario" />
     </fragment>
     <fragment
         android:id="@+id/apunte"
@@ -78,11 +81,6 @@
         android:label="fragment_recurso"
         tools:layout="@layout/fragment_recurso" />
     <fragment
-        android:id="@+id/agregar_horario"
-        android:name="ni.edu.uca.msclases.Horarios.Agregar_horario"
-        android:label="fragment_agregar_horario"
-        tools:layout="@layout/fragment_agregar_horario" />
-    <fragment
         android:id="@+id/editar_horario"
         android:name="ni.edu.uca.msclases.Horarios.Editar_horario"
         android:label="fragment_editar_horario"
@@ -107,4 +105,9 @@
         android:name="ni.edu.uca.msclases.Contactos.Editar_contacto"
         android:label="fragment_editar_contacto"
         tools:layout="@layout/fragment_editar_contacto" />
+    <fragment
+        android:id="@+id/agregarHorario"
+        android:name="ni.edu.uca.msclases.AgregarHorario"
+        android:label="fragment_agregar_horario"
+        tools:layout="@layout/fragment_agregar_horario" />
 </navigation>
