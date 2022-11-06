@@ -7,7 +7,8 @@
     tools:context=".Menu">
 
 <TextView
-
+    android:fontFamily="@font/funo"
+    android:textColor="@color/black"
     android:id="@+id/tvMisClases"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
