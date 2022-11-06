@@ -11,9 +11,11 @@
     android:id="@+id/tvMisClases"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:text="MIS CLASES"
+    android:text="@string/mis_clasess"
+    android:textColor="@color/black"
+    android:textStyle="bold"
     android:textAlignment="center"
-    android:textSize="50dp"/>
+    android:textSize="50sp"/>
 
     <LinearLayout
         android:id="@+id/lhorario"

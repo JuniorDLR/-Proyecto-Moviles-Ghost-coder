@@ -18,44 +18,42 @@
         android:name="ni.edu.uca.msclases.Menu"
         android:label="fragment_menu"
         tools:layout="@layout/fragment_menu" >
+
+
+        <action
+            android:id="@+id/action_menu_to_recurso"
+            app:destination="@id/recurso" />
+        <action
+            android:id="@+id/action_menu_to_contacto"
+            app:destination="@id/contacto" />
         <action
             android:id="@+id/action_menu_to_horario"
             app:destination="@id/horario" />
         <action
             android:id="@+id/action_menu_to_apunte"
             app:destination="@id/apunte" />
-        <action
-            android:id="@+id/action_menu_to_contacto"
-            app:destination="@id/contacto" />
-        <action
-            android:id="@+id/action_menu_to_recurso"
-            app:destination="@id/recurso" />
     </fragment>
     <fragment
         android:id="@+id/horario"
-        android:name="ni.edu.uca.msclases.Horario"
+        android:name="ni.edu.uca.msclases.Horarios.Horario"
         android:label="fragment_horario"
         tools:layout="@layout/fragment_horario" >
+
         <action
             android:id="@+id/action_horario_to_agregar_horario"
             app:destination="@id/agregar_horario" />
         <action
             android:id="@+id/action_horario_to_editar_horario"
             app:destination="@id/editar_horario" />
-        <action
-            android:id="@+id/action_horario_to_eliminar_horario"
-            app:destination="@id/eliminar_horario" />
-        <action
-            android:id="@+id/action_horario_to_vaciar_horario"
-            app:destination="@id/vaciar_horario" />
     </fragment>
     <fragment
         android:id="@+id/apunte"
-        android:name="ni.edu.uca.msclases.Apunte"
+        android:name="ni.edu.uca.msclases.Apuntes.Apunte"
         android:label="fragment_apunte"
         tools:layout="@layout/fragment_apunte" >
+
         <action
-            android:id="@+id/action_apunte_to_agregar_apunten"
+            android:id="@+id/action_apunte_to_agregar_apunte"
             app:destination="@id/agregar_apunte" />
         <action
             android:id="@+id/action_apunte_to_editar_apunte"
@@ -63,75 +61,50 @@
     </fragment>
     <fragment
         android:id="@+id/contacto"
-        android:name="ni.edu.uca.msclases.Contacto"
+        android:name="ni.edu.uca.msclases.Contactos.Contacto"
         android:label="fragment_contacto"
         tools:layout="@layout/fragment_contacto" >
+
         <action
             android:id="@+id/action_contacto_to_agregar_contacto"
             app:destination="@id/agregar_contacto" />
         <action
             android:id="@+id/action_contacto_to_editar_contacto"
             app:destination="@id/editar_contacto" />
-        <action
-            android:id="@+id/action_contacto_to_eliminar_contacto"
-            app:destination="@id/eliminar_contacto" />
-        <action
-            android:id="@+id/action_contacto_to_vaciar_contacto"
-            app:destination="@id/vaciar_contacto" />
     </fragment>
     <fragment
         android:id="@+id/recurso"
-        android:name="ni.edu.uca.msclases.Recurso"
+        android:name="ni.edu.uca.msclases.Recursos.Recurso"
         android:label="fragment_recurso"
         tools:layout="@layout/fragment_recurso" />
     <fragment
         android:id="@+id/agregar_horario"
-        android:name="ni.edu.uca.msclases.Agregar_horario"
+        android:name="ni.edu.uca.msclases.Horarios.Agregar_horario"
         android:label="fragment_agregar_horario"
         tools:layout="@layout/fragment_agregar_horario" />
     <fragment
         android:id="@+id/editar_horario"
-        android:name="ni.edu.uca.msclases.Editar_horario"
+        android:name="ni.edu.uca.msclases.Horarios.Editar_horario"
         android:label="fragment_editar_horario"
         tools:layout="@layout/fragment_editar_horario" />
     <fragment
-        android:id="@+id/eliminar_horario"
-        android:name="ni.edu.uca.msclases.Eliminar_horario"
-        android:label="fragment_eliminar_horario"
-        tools:layout="@layout/fragment_eliminar_horario" />
-    <fragment
-        android:id="@+id/vaciar_horario"
-        android:name="ni.edu.uca.msclases.Vaciar_horario"
-        android:label="fragment_vaciar_horario"
-        tools:layout="@layout/fragment_vaciar_horario" />
-    <fragment
         android:id="@+id/agregar_apunte"
-        android:name="ni.edu.uca.msclases.Agregar_apunte"
+        android:name="ni.edu.uca.msclases.Apuntes.Agregar_apunte"
         android:label="fragment_agregar_apunte"
         tools:layout="@layout/fragment_agregar_apunte" />
     <fragment
         android:id="@+id/editar_apunte"
-        android:name="ni.edu.uca.msclases.Editar_apunte"
+        android:name="ni.edu.uca.msclases.Apuntes.Editar_apunte"
         android:label="fragment_editar_apunte"
         tools:layout="@layout/fragment_editar_apunte" />
     <fragment
         android:id="@+id/agregar_contacto"
-        android:name="ni.edu.uca.msclases.Agregar_contacto"
+        android:name="ni.edu.uca.msclases.Contactos.Agregar_contacto"
         android:label="fragment_agregar_contacto"
         tools:layout="@layout/fragment_agregar_contacto" />
     <fragment
         android:id="@+id/editar_contacto"
-        android:name="ni.edu.uca.msclases.Editar_contacto"
+        android:name="ni.edu.uca.msclases.Contactos.Editar_contacto"
         android:label="fragment_editar_contacto"
         tools:layout="@layout/fragment_editar_contacto" />
-    <fragment
-        android:id="@+id/eliminar_contacto"
-        android:name="ni.edu.uca.msclases.Eliminar_contacto"
-        android:label="fragment_eliminar_contacto"
-        tools:layout="@layout/fragment_eliminar_contacto" />
-    <fragment
-        android:id="@+id/vaciar_contacto"
-        android:name="ni.edu.uca.msclases.Vaciar_contacto"
-        android:label="fragment_vaciar_contacto"
-        tools:layout="@layout/fragment_vaciar_contacto" />
 </navigation>

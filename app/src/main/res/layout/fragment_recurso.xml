@@ -10,9 +10,14 @@
         android:id="@+id/tvRecursos"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Recursos"
+        android:text="@string/recursos"
+        android:textColor="@color/black"
+        android:textStyle="bold"
         android:textAlignment="center"
-        android:textSize="40sp" />
+        android:textSize="40sp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
 
 
 

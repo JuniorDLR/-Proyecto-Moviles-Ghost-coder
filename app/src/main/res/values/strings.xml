@@ -3,4 +3,11 @@
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="apuntes">APUNTES</string>
+    <string name="mis_clases">Mis Clases</string>
+    <string name="bienvenido">¡Bienvenido!</string>
+    <string name="introduzca_su_usuario">Introduzca su usuario</string>
+    <string name="introduzca_su_contrase_a">Introduzca su contraseña</string>
+    <string name="agregando_apuntes">agregando apuntes</string>
+    <string name="mis_clasess">MIS CLASES</string>
+    <string name="recursos">Recursos</string>
 </resources>

@@ -1,23 +1,21 @@
-package ni.edu.uca.msclases
+package ni.edu.uca.msclases.Apuntes
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.navigation.Navigation
+import ni.edu.uca.msclases.R
+import ni.edu.uca.msclases.databinding.FragmentAgregarApunteBinding
 
-// TODO: Rename parameter arguments, choose names that match
-// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
+
 private const val ARG_PARAM1 = "param1"
 private const val ARG_PARAM2 = "param2"
 
-/**
- * A simple [Fragment] subclass.
- * Use the [Agregar_contacto.newInstance] factory method to
- * create an instance of this fragment.
- */
-class Agregar_contacto : Fragment() {
-    // TODO: Rename and change types of parameters
+
+class Agregar_apunte : Fragment() {
+    lateinit var fbinding :FragmentAgregarApunteBinding
     private var param1: String? = null
     private var param2: String? = null
 
@@ -33,8 +31,15 @@ class Agregar_contacto : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_agregar_contacto, container, false)
+        fbinding = FragmentAgregarApunteBinding.inflate(layoutInflater)
+        iniciar()
+        return fbinding.root
+    }
+
+    private fun iniciar() {
+        fbinding.btnIzquierdaApunte.setOnClickListener {
+            Navigation.findNavController(fbinding.root).navigate(R.id.apunte)
+        }
     }
 
     companion object {
@@ -44,12 +49,12 @@ class Agregar_contacto : Fragment() {
          *
          * @param param1 Parameter 1.
          * @param param2 Parameter 2.
-         * @return A new instance of fragment Agregar_contacto.
+         * @return A new instance of fragment Agregar_apunte.
          */
         // TODO: Rename and change types and number of parameters
         @JvmStatic
         fun newInstance(param1: String, param2: String) =
-            Agregar_contacto().apply {
+            Agregar_apunte().apply {
                 arguments = Bundle().apply {
                     putString(ARG_PARAM1, param1)
                     putString(ARG_PARAM2, param2)

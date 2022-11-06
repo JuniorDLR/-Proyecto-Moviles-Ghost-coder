@@ -34,7 +34,7 @@
             android:textColor="@color/black"
             android:textStyle="bold"
             android:textAlignment="center"
-            android:textSize="48sp" />
+            android:textSize="47sp" />
 
         <Button
             android:id="@+id/btnAgregar"

@@ -7,7 +7,11 @@ import ni.edu.uca.msclases.R
 import ni.edu.uca.msclases.RecycleApuntes.Apunte
 
 
-class ApunteAdapter(private val listaApunte: List<Apunte>) : RecyclerView.Adapter<ApunteViewHolder>() {
+class ApunteAdapter(
+    private val listaApunte: List<Apunte>,
+    private val onClickListener:(Apunte)->Unit,
+    private  val onClickDelete:(Int) ->Unit
+): RecyclerView.Adapter<ApunteViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ApunteViewHolder {
 
@@ -19,8 +23,10 @@ class ApunteAdapter(private val listaApunte: List<Apunte>) : RecyclerView.Adapte
     override fun onBindViewHolder(holder: ApunteViewHolder, position: Int) {
 
         val item = listaApunte[position]
-        holder.render(item)
+        holder.render(item,onClickListener,onClickDelete)
     }
+
+
 
     override fun getItemCount(): Int =listaApunte.size
 
