@@ -4,41 +4,170 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/bg_color">
+    tools:context=".MainActivity">
 
     <TextView
-        android:id="@+id/tvContactos"
-        android:layout_width="match_parent"
-        android:fontFamily="@font/funo"
+        android:id="@+id/tvAgregar"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
         android:text="CONTACTOS"
-        android:textColor="@color/black"
+        android:textSize="18sp"
         android:textStyle="bold"
-        android:textAlignment="center"
-        android:textSize="40sp"
-        app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"/>
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
-    <LinearLayout
-        android:id="@+id/lAgregar"
-        android:layout_width="150dp"
-        android:layout_height="80dp"
-        android:orientation="vertical"
+    <TextView
+        android:id="@+id/tvLeer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="96dp"
+        android:text="Cargar contacto"
+        android:textSize="18sp"
+        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tvContactos">
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnGuardar" />
 
-        <Button
-            android:layout_width="150dp"
-            android:layout_height="80dp"
-            android:text="AGREGAR"
-            android:textSize="20sp" />
+    <EditText
+        android:id="@+id/etNombre"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="12dp"
+        android:ems="10"
+        android:hint="Nombre"
+        android:importantForAutofill="no"
+        android:inputType="textPersonName"
+        android:minHeight="48dp"
+        android:textColorHint="#757575"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvAgregar" />
 
-    </LinearLayout>
+    <EditText
+        android:id="@+id/etCorreo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="16dp"
+        android:ems="10"
+        android:hint="Correo"
+        android:importantForAutofill="no"
+        android:minHeight="48dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/etNombre" />
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:layout_width="match_parent"
-        android:layout_height="590dp"
-        app:layout_constraintTop_toBottomOf="@id/lAgregar"/>
+    <EditText
+        android:id="@+id/etUbicacion"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="236dp"
+        android:layout_marginTop="16dp"
+        android:ems="10"
+        android:hint="Ubicacion"
+        android:importantForAutofill="no"
+        android:minHeight="48dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/etNombre" />
+
+    <EditText
+        android:id="@+id/etTelefono"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="16dp"
+        android:ems="10"
+        android:hint="Telefono"
+        android:importantForAutofill="no"
+        android:inputType="number"
+        android:minHeight="48dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/etCorreo" />
+
+    <EditText
+        android:id="@+id/etNotas"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="236dp"
+        android:layout_marginTop="80dp"
+        android:ems="10"
+        android:hint="Notas"
+        android:importantForAutofill="no"
+        android:minHeight="48dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/etNombre" />
+
+    <Button
+        android:id="@+id/btnGuardar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="28dp"
+        android:layout_marginTop="28dp"
+        android:backgroundTint="#F44336"
+        android:text="Guardar contacto"
+        android:onClick="GuardaEnLista"
+        android:textAllCaps="false"
+        android:textColor="#FFEB3B"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/etTelefono"
+        tools:ignore="TextContrastCheck" />
+
+    <Button
+        android:id="@+id/btnLeer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="28dp"
+        android:backgroundTint="#F44336"
+        android:text="Cargar el archivo"
+        android:onClick="LeeDelArchivo"
+        android:textAllCaps="false"
+        android:textColor="#FFEB3B"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/lstNombres"
+        tools:ignore="TextContrastCheck" />
+
+    <Button
+        android:id="@+id/btnMostrar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="28dp"
+        android:layout_marginTop="28dp"
+        android:backgroundTint="#F44336"
+        android:text="Mostrar contacto"
+        android:onClick="MuestraDatos"
+        android:textAllCaps="false"
+        android:textColor="#FFEB3B"
+        app:layout_constraintStart_toEndOf="@+id/btnLeer"
+        app:layout_constraintTop_toBottomOf="@+id/lstNombres"
+        tools:ignore="TextContrastCheck" />
+
+    <Button
+        android:id="@+id/btnGuardarDisco"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="28dp"
+        android:backgroundTint="#F44336"
+        android:text="Guardar el archivo"
+        android:onClick="GuardaEnArchivo"
+        android:textAllCaps="false"
+        android:textColor="#FFEB3B"
+        app:layout_constraintStart_toEndOf="@+id/btnGuardar"
+        app:layout_constraintTop_toBottomOf="@+id/etTelefono"
+        tools:ignore="TextContrastCheck" />
+
+    <Spinner
+        android:id="@+id/lstNombres"
+        android:layout_width="259dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="76dp"
+        android:layout_marginTop="28dp"
+        android:contentDescription="lista de nombres"
+        android:minHeight="48dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvLeer" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
