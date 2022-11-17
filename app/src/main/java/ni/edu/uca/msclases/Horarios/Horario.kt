@@ -28,12 +28,7 @@ class Horario : Fragment() {
     }
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        binding.btnEditarHorario.setOnClickListener {
-            it.findNavController().navigate(R.id.editar_horario)
-        }
-        binding.btnAgregarHorario.setOnClickListener{
-            it.findNavController().navigate(R.id.agregarHorario)
-        }
+
     }
 
 }

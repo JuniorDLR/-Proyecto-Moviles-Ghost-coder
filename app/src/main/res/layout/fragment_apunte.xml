@@ -4,56 +4,135 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Apunte">
+    tools:context=".MainActivity">
 
-
-
-    <LinearLayout
-        android:id="@+id/Apunntes"
-        android:layout_width="match_parent"
+    <TextView
+        android:id="@+id/tvAgregar"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="32dp"
+        android:text="APUNTES"
+        android:textSize="30sp"
+        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
+    <TextView
+        android:id="@+id/tvLeer2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="96dp"
+        android:text="Cargar Apuntes"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnGuardar2" />
 
-
-        <Button
-            android:id="@+id/btnizquierda"
-            android:layout_width="100dp"
-            android:layout_height="match_parent"
-            android:background="@drawable/izquierda"/>
-
-
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="APUNTES"
-            android:textColor="@color/black"
-            android:textStyle="bold"
-            android:textAlignment="center"
-            android:textSize="47sp" />
-
-        <Button
-            android:id="@+id/btnAgregar"
-            android:layout_width="100dp"
-            android:layout_height="match_parent"
-            android:background="@drawable/ic_baseline_note_add_24"/>
-
-
-
-
-    </LinearLayout>
-
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recycleViewApunte"
+    <EditText
+        android:id="@+id/etTitulo2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/Apunntes"/>
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="12dp"
+        android:ems="10"
+        android:hint="Titulo"
+        android:importantForAutofill="no"
+        android:inputType="textPersonName"
+        android:minHeight="48dp"
+        android:textColorHint="#757575"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvAgregar" />
 
 
+    <EditText
+        android:id="@+id/etDescripcion2"
+        android:layout_width="match_parent"
+        android:layout_height="120dp"
+        android:ems="10"
+        android:textAlignment="center"
+        android:hint="Descripcion"
+        android:importantForAutofill="no"
+        android:minHeight="48dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/etTitulo2"
+
+        />
+
+
+    <Button
+        android:id="@+id/btnGuardar2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="28dp"
+        android:layout_marginTop="28dp"
+        android:backgroundTint="#F44336"
+        android:onClick="GuardarEnLista2"
+        android:text="Guardar Apuntes"
+        android:textAllCaps="false"
+        android:textColor="#FFEB3B"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/etDescripcion2"
+        tools:ignore="TextContrastCheck" />
+
+    <Button
+        android:id="@+id/btnLeer2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="28dp"
+        android:backgroundTint="#F44336"
+        android:onClick="LeeDelArchivo2"
+        android:text="Cargar el archivo"
+        android:textAllCaps="false"
+        android:textColor="#FFEB3B"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/lstNombres1"
+        tools:ignore="TextContrastCheck" />
+
+    <Button
+        android:id="@+id/btnMostrar2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="28dp"
+        android:layout_marginTop="28dp"
+        android:backgroundTint="#F44336"
+        android:onClick="MuestraDatos2"
+        android:text="Mostrar Apuntes"
+        android:textAllCaps="false"
+        android:textColor="#FFEB3B"
+        app:layout_constraintStart_toEndOf="@+id/btnLeer2"
+        app:layout_constraintTop_toBottomOf="@+id/lstNombres1"
+        tools:ignore="TextContrastCheck" />
+
+    <Button
+        android:id="@+id/btnGuardarDisco"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="28dp"
+        android:backgroundTint="#F44336"
+        android:onClick="GuardaEnArchivo2"
+        android:text="Guardar el archivo"
+        android:textAllCaps="false"
+        android:textColor="#FFEB3B"
+        app:layout_constraintStart_toEndOf="@+id/btnGuardar2"
+        app:layout_constraintTop_toBottomOf="@+id/etDescripcion2"
+        tools:ignore="TextContrastCheck" />
+
+    <Spinner
+        android:id="@+id/lstNombres1"
+        android:layout_width="259dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="76dp"
+        android:layout_marginTop="28dp"
+        android:contentDescription="lista de Apuntes"
+        android:minHeight="48dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvLeer2" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
