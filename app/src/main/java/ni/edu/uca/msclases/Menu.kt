@@ -41,8 +41,9 @@ class Menu : Fragment() {
             Navigation.findNavController(fbinding.root).navigate(R.id.contacto)
         }
         fbinding.btnRecursos.setOnClickListener {
-            Navigation.findNavController(fbinding.root).navigate(R.id.recurso)
+            Navigation.findNavController(fbinding.root).navigate(R.id.recursos)
         }
+
     }
 
 }
