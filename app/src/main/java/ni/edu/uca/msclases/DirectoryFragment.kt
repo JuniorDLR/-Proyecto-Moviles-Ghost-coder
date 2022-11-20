@@ -1,4 +1,4 @@
-package ni.edu.uca.mini_proyecto
+package ni.edu.uca.msclases
 
 import android.annotation.SuppressLint
 import android.app.AlertDialog
@@ -18,8 +18,7 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import ni.edu.uca.msclases.MainActivity
-import ni.edu.uca.msclases.R
+import ni.edu.uca.mini_proyecto.MainActivityRecursos
 
 class DirectoryFragment : Fragment() {
     private lateinit var directoryUri: Uri

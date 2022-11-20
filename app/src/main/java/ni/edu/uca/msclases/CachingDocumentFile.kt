@@ -1,4 +1,4 @@
-package ni.edu.uca.mini_proyecto
+package ni.edu.uca.msclases
 
 import androidx.documentfile.provider.DocumentFile
 

@@ -1,4 +1,4 @@
-package ni.edu.uca.mini_proyecto
+package ni.edu.uca.msclases
 
 
 open class Event<out T>(private val content: T) {

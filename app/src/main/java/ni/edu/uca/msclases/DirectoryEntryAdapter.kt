@@ -1,4 +1,4 @@
-package ni.edu.uca.mini_proyecto
+package ni.edu.uca.msclases
 
 import android.view.LayoutInflater
 import android.view.View
@@ -6,7 +6,6 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
-import ni.edu.uca.msclases.R
 
 class DirectoryEntryAdapter (
     private val clickListeners: ClickListeners
