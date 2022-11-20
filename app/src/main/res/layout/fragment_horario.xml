@@ -4,6 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:background="@drawable/bg_color"
     tools:context=".ActivityMainHorario">
 
 
@@ -16,6 +17,7 @@
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/Tituloet"
+            android:textStyle="bold"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="@string/titulo" />
@@ -31,6 +33,7 @@
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/messageet"
             android:layout_width="match_parent"
+            android:textStyle="bold"
             android:layout_height="wrap_content"
             android:hint="@string/mensaje" />
 
@@ -49,8 +52,8 @@
             android:layout_weight="1"
             android:calendarViewShown="false"
             android:datePickerMode="spinner"
-            android:scaleX="0.7"
-            android:scaleY="0.7" />
+            android:scaleX="0.9"
+            android:scaleY="0.9" />
 
         <TimePicker
             android:id="@+id/TimePicker"
@@ -59,8 +62,8 @@
             android:layout_gravity="center"
             android:layout_marginHorizontal="-30dp"
             android:layout_weight="1"
-            android:scaleX="0.7"
-            android:scaleY="0.7"
+            android:scaleX="0.9"
+            android:scaleY="0.9"
             android:timePickerMode="spinner" />
 
 
@@ -72,7 +75,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
+        android:backgroundTint="@color/cardview_shadow_start_color"
         android:layout_marginTop="20dp"
+        android:textColor="#FFEB3B"
         android:text="@string/notificar" />
 
 

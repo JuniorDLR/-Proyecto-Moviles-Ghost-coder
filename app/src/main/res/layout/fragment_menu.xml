@@ -4,18 +4,21 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/bg_color"
     tools:context=".Menu">
 
-<TextView
-
-    android:id="@+id/tvMisClases"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:text="@string/mis_clasess"
-    android:textColor="@color/black"
-    android:textStyle="bold"
-    android:textAlignment="center"
-    android:textSize="50sp"/>
+    <TextView
+        android:id="@+id/tvMisClases"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/funo"
+        android:text="@string/mis_clasess"
+        android:textAlignment="center"
+        android:textColor="@color/black"
+        android:textSize="50sp"
+        android:textStyle="bold"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="-2dp" />
 
     <LinearLayout
         android:id="@+id/lhorario"
