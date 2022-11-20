@@ -1,4 +1,4 @@
-package ni.edu.uca.msclases.Horarios
+package ni.edu.uca.msclases
 
 import android.annotation.SuppressLint
 import android.app.*
@@ -13,7 +13,7 @@ import android.widget.EditText
 import android.widget.TimePicker
 import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
-import ni.edu.uca.msclases.R
+import ni.edu.uca.msclases.Horarios.*
 import ni.edu.uca.msclases.databinding.ActivityMainBinding
 import java.util.*
 
