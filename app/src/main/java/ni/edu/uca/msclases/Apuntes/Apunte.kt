@@ -56,7 +56,6 @@ class Apunte : Fragment() {
 
 
 
-
     fun GuardarListaApunte() {
         val Titulo = binding.etTitulo2.text.toString()
         val descripcion= binding.etDescripcion2.text.toString()

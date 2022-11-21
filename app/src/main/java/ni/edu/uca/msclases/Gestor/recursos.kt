@@ -1,20 +1,18 @@
-package ni.edu.uca.msclases
+package ni.edu.uca.msclases.Gestor
 
 import android.app.Activity
 import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
 import android.provider.DocumentsContract
-import android.text.TextUtils.replace
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.appcompat.app.AppCompatActivity
-import androidx.appcompat.widget.Toolbar
 import androidx.fragment.app.commit
 import ni.edu.uca.msclases.databinding.FragmentRecursosBinding
-import ni.edu.uca.msclases.recursos.Companion.OPEN_DIRECTORY_REQUEST_CODE
+import ni.edu.uca.msclases.R
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER

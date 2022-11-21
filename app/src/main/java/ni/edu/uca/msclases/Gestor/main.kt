@@ -1,4 +1,4 @@
-package ni.edu.uca.mini_proyecto
+package ni.edu.uca.msclases.Gestor
 
 import android.app.Activity
 import android.content.Intent
@@ -13,7 +13,6 @@ import android.view.View
 import androidx.fragment.app.commit
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import ni.edu.uca.msclases.R
-import ni.edu.uca.msclases.DirectoryFragment
 import ni.edu.uca.msclases.databinding.ActivityMainBinding
 
 class MainActivityRecursos : AppCompatActivity() {

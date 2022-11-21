@@ -1,4 +1,4 @@
-package ni.edu.uca.msclases
+package ni.edu.uca.msclases.Gestor
 
 
 open class Event<out T>(private val content: T) {

@@ -50,7 +50,7 @@
         tools:layout="@layout/fragment_contacto" />
     <fragment
         android:id="@+id/recursos"
-        android:name="ni.edu.uca.msclases.recursos"
+        android:name="ni.edu.uca.msclases.Gestor.recursos"
         android:label="fragment_recursos"
         tools:layout="@layout/fragment_recursos" />
 </navigation>
