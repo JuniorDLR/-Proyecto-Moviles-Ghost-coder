@@ -56,22 +56,28 @@ class Apunte : Fragment() {
 
 
 
-    fun GuardarListaApunte() {
+    fun GuardarListaApunte():Boolean {
         val Titulo = binding.etTitulo2.text.toString()
-        val descripcion= binding.etDescripcion2.text.toString()
-       val lstnombre =activity?.findViewById<Spinner>(R.id.lstNombres1)
+        val descripcion = binding.etDescripcion2.text.toString()
+        val lstnombre = activity?.findViewById<Spinner>(R.id.lstNombres1)
 
+        var retorno=true
+        if (binding.etTitulo2.text.toString().isEmpty()) {
+            binding.etTitulo2.setError("Este campo no puede quedar vacio")
+            retorno= false
 
-        listaA.add(
-            Apuntes(
-                Titulo,
-                descripcion,
+        } else if (binding.etDescripcion2.text.toString().isEmpty()) {
+            binding.etDescripcion2.setError("Este campo no puede quedar vacio")
+            return false
 
-            )
-        )
+        }else{
+            listaA.add(Apuntes(Titulo, descripcion))
+            Toast.makeText(context, "Agregado a la lista", Toast.LENGTH_SHORT).show()
+            listaNA.add(Titulo)
 
-        Toast.makeText(context, "Agregado a la lista", Toast.LENGTH_SHORT).show()
-        listaNA.add(Titulo)
+            binding.etTitulo2.setText("")
+            binding.etDescripcion2.setText("")
+        }
         val llenarSpinner: ArrayAdapter<String> = ArrayAdapter<String>(
             requireActivity().applicationContext,
             android.R.layout.simple_spinner_item,
@@ -80,7 +86,7 @@ class Apunte : Fragment() {
         llenarSpinner.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
         lstnombre?.adapter = llenarSpinner
 
-
+        return true
     }
 
     fun GuardarEnArchivoApunte() {
@@ -167,14 +173,14 @@ class Apunte : Fragment() {
         ventanaMensaje.show()
 
     }
+
+
     fun iniciar() {
 
       binding.btnGuardar2.setOnClickListener {
           GuardarListaApunte()
+          GuardarEnArchivoApunte()
       }
-        binding.btnGuardarDisco2.setOnClickListener {
-            GuardarEnArchivoApunte()
-        }
         binding.btnLeer2.setOnClickListener {
             LeeDelArchivoApuntes()
         }

@@ -174,8 +174,6 @@ class contacto : Fragment() {
 
         binding.btnGuardar.setOnClickListener {
             GuardarLista()
-        }
-        binding.btnGuardarDisco.setOnClickListener {
             GuardarEnArchivo()
         }
         binding.btnLeer.setOnClickListener {
