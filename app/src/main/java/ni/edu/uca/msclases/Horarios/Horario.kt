@@ -7,18 +7,12 @@ import android.content.Intent
 import android.icu.util.Calendar
 import android.os.Build
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.DatePicker
-import android.widget.EditText
-import android.widget.TimePicker
 import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.content.ContextCompat.getSystemService
-import androidx.navigation.findNavController
-import ni.edu.uca.msclases.R
+import androidx.fragment.app.Fragment
 import ni.edu.uca.msclases.databinding.FragmentHorarioBinding
 import java.util.*
 
@@ -42,10 +36,13 @@ class Horario : Fragment() {
             .root
 
 
-    @RequiresApi(Build.VERSION_CODES.M)
+
+    @RequiresApi(Build.VERSION_CODES.O)
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        createNotificationChannel()
         setupListener()
+
     }
 
 
@@ -58,14 +55,14 @@ class Horario : Fragment() {
        }
    }
 
+    @SuppressLint("NewApi")
     @RequiresApi(Build.VERSION_CODES.M)
     private fun scheduleNotification()= with(binding) {
         val intent = Intent(context, Notificar::class.java)
         val title = binding.Tituloet.text.toString()
-
-        val mesaje = binding.messageet.text.toString()
+        val mesage = binding.messageet.text.toString()
         intent.putExtra(titleExtra, title)
-        intent.putExtra(messagueExtra, mesaje)
+        intent.putExtra(messagueExtra, mesage)
 
         val pendingIntent = PendingIntent.getBroadcast(
             context,
@@ -74,20 +71,16 @@ class Horario : Fragment() {
         )
 
         val alarmManager = requireActivity().getSystemService(Context.ALARM_SERVICE) as AlarmManager
-        val time = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
-            getTime()
-        } else {
-            TODO("VERSION.SDK_INT < N")
-        }
+       val time = getTime()
         alarmManager.setAndAllowWhileIdle(
             AlarmManager.RTC_WAKEUP,
             time,
             pendingIntent
         )
-        showAlert(time, title, mesaje)
+        showAlert(time, title, mesage)
     }
 
-    private fun showAlert(time: Long, title: String, mesaje: String) {
+    private fun showAlert(time: Long, title: String, mesage: String) {
         val date = Date(time)
         val dateFormat = android.text.format.DateFormat.getLongDateFormat(context)
         val timeFormat = android.text.format.DateFormat.getTimeFormat(context)
@@ -96,7 +89,7 @@ class Horario : Fragment() {
             .setTitle("Notificacion SH")
             .setMessage(
                 "Titulo" + title +
-                        "\nMensaje" + mesaje +
+                        "\nMensaje" + mesage +
                         "\nAT"+dateFormat.format(date)+""+timeFormat.format(date))
             .setPositiveButton("okay"){_,_->}.show()
 
@@ -112,9 +105,10 @@ class Horario : Fragment() {
         val anio = binding.DatePicker.year
 
         val calendar = Calendar.getInstance()
-        calendar.set(anio, dia, mes, hora, minute)
+        calendar.set(anio, mes, dia, hora, minute)
         return calendar.timeInMillis
     }
+
 
     @RequiresApi(Build.VERSION_CODES.O)
     private fun createNotificationChannel() {

@@ -26,7 +26,7 @@
         android:id="@+id/tvLeer"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="96dp"
+        android:layout_marginTop="50dp"
         android:text="Cargar contactos"
         android:textSize="22sp"
         android:textStyle="bold"
@@ -39,10 +39,11 @@
         android:id="@+id/etNombre"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
+        android:layout_marginStart="20dp"
         android:layout_marginTop="12dp"
         android:ems="10"
         android:hint="Nombre"
+
         android:textStyle="bold"
         android:importantForAutofill="no"
         android:inputType="textPersonName"
@@ -53,38 +54,42 @@
 
     <EditText
         android:id="@+id/etCorreo"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="10dp"
+        android:layout_margin="20dp"
         android:ems="10"
         android:textStyle="bold"
         android:hint="Correo"
         android:importantForAutofill="no"
         android:minHeight="48dp"
+        android:inputType="textEmailAddress"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/etNombre" />
 
     <EditText
-        android:id="@+id/etUbicacion"
-        android:layout_width="wrap_content"
+        android:id="@+id/etNotas"
+        android:layout_width="match_parent"
+        android:layout_margin="20dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="236dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginStart="20dp"
         android:ems="10"
-        android:hint="Ubicacion"
+        android:hint="Nota"
         android:textStyle="bold"
         android:importantForAutofill="no"
         android:minHeight="48dp"
+        android:inputType=""
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/etNombre" />
+        app:layout_constraintTop_toBottomOf="@+id/etUbicacion" />
 
     <EditText
         android:id="@+id/etTelefono"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="10dp"
         android:ems="10"
         android:hint="Telefono"
         android:textStyle="bold"
@@ -95,18 +100,18 @@
         app:layout_constraintTop_toBottomOf="@+id/etCorreo" />
 
     <EditText
-        android:id="@+id/etNotas"
+        android:id="@+id/etUbicacion"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="236dp"
-        android:layout_marginTop="80dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginStart="20dp"
         android:ems="10"
         android:textStyle="bold"
-        android:hint="Notas"
+        android:hint="Ubicacion"
         android:importantForAutofill="no"
         android:minHeight="48dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/etNombre" />
+        app:layout_constraintTop_toBottomOf="@+id/etTelefono" />
 
     <Button
         android:id="@+id/btnGuardar"
@@ -115,12 +120,11 @@
         android:layout_marginStart="28dp"
         android:layout_marginTop="28dp"
         android:backgroundTint="@color/cardview_shadow_start_color"
-        android:onClick="GuardaEnLista"
         android:text="Guardar contacto"
         android:textAllCaps="false"
         android:textColor="#FFEB3B"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/etTelefono"
+        app:layout_constraintTop_toBottomOf="@+id/etNotas"
         tools:ignore="TextContrastCheck" />
 
     <Button
@@ -131,7 +135,6 @@
         android:layout_marginTop="28dp"
         android:backgroundTint="@color/cardview_shadow_start_color"
         android:text="Cargar el archivo"
-        android:onClick="LeeDelArchivo"
         android:textAllCaps="false"
         android:textColor="#FFEB3B"
         app:layout_constraintStart_toStartOf="parent"
@@ -161,22 +164,22 @@
         android:layout_marginTop="28dp"
         android:backgroundTint="@color/cardview_shadow_start_color"
         android:text="Guardar el archivo"
-        android:onClick="GuardaEnArchivo"
         android:textAllCaps="false"
         android:textColor="#FFEB3B"
         app:layout_constraintStart_toEndOf="@+id/btnGuardar"
-        app:layout_constraintTop_toBottomOf="@+id/etTelefono"
+        app:layout_constraintTop_toBottomOf="@+id/etNotas"
         tools:ignore="TextContrastCheck" />
 
     <Spinner
         android:id="@+id/lstNombres"
-        android:layout_width="259dp"
+        android:layout_width="250dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="76dp"
+
         android:layout_marginTop="28dp"
         android:contentDescription="lista de nombres"
         android:minHeight="48dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvLeer" />
+        app:layout_constraintTop_toBottomOf="@+id/tvLeer"
+        app:layout_constraintEnd_toEndOf="parent"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
