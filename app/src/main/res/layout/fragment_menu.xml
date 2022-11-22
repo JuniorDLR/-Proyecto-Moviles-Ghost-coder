@@ -24,22 +24,24 @@
         android:id="@+id/lhorario"
         android:layout_width="match_parent"
         android:layout_height="130dp"
-        android:orientation="horizontal"
-        app:layout_constraintTop_toBottomOf="@id/tvMisClases"
         android:layout_margin="10sp"
-        app:layout_constraintStart_toStartOf="parent"
+        android:orientation="horizontal"
         app:layout_constraintEnd_toEndOf="parent"
-        >
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvMisClases">
 
         <ImageView
             android:layout_width="100dp"
             android:layout_height="140dp"
-            android:src="@drawable/ic_baseline_calendar_today_24"/>
+            android:src="@drawable/ic_baseline_calendar_today_24" />
+
         <ImageView
-            android:src="@drawable/calendario"
             android:id="@+id/btnHorario"
             android:layout_width="match_parent"
-            android:layout_height="140dp"/>
+            android:layout_height="match_parent"
+            android:background="@drawable/border"
+            android:src="@drawable/calendario"
+          />
 
     </LinearLayout>
 
@@ -47,23 +49,26 @@
         android:id="@+id/lApunte"
         android:layout_width="match_parent"
         android:layout_height="130dp"
+        android:layout_margin="10dp"
         android:orientation="horizontal"
-        app:layout_constraintTop_toBottomOf="@id/lhorario"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/lContacto"
         app:layout_constraintEnd_toEndOf="parent"
 
-        android:layout_margin="10dp"
-        app:layout_constraintBottom_toTopOf="@id/lContacto">
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/lhorario">
 
         <ImageView
             android:layout_width="100dp"
             android:layout_height="140dp"
-            android:src="@drawable/ic_baseline_note_add_24"/>
+            android:src="@drawable/ic_baseline_note_add_24" />
+
         <ImageView
             android:id="@+id/btnApuntes"
-            android:src="@drawable/apuntes"
             android:layout_width="match_parent"
-            android:layout_height="140dp"/>
+            android:layout_height="match_parent"
+            android:background="@drawable/border"
+            android:src="@drawable/apuntes"
+            android:scaleType="matrix" />
 
     </LinearLayout>
 
@@ -71,23 +76,25 @@
         android:id="@+id/lContacto"
         android:layout_width="match_parent"
         android:layout_height="130dp"
-        android:orientation="horizontal"
-        app:layout_constraintTop_toBottomOf="@id/lApunte"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
         android:layout_margin="10dp"
+        android:orientation="horizontal"
         app:layout_constraintBottom_toTopOf="@id/lRecursos"
-        >
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/lApunte">
 
         <ImageView
             android:layout_width="100dp"
             android:layout_height="140dp"
-            android:src="@drawable/ic_baseline_contacts_24"/>
+            android:src="@drawable/ic_baseline_contacts_24" />
+
         <ImageView
             android:id="@+id/btnContactos"
             android:layout_width="match_parent"
+            android:layout_height="match_parent"
             android:src="@drawable/contactos"
-            android:layout_height="140dp"/>
+            android:background="@drawable/border"
+            />
 
     </LinearLayout>
 
@@ -95,25 +102,25 @@
         android:id="@+id/lRecursos"
         android:layout_width="match_parent"
         android:layout_height="130dp"
-        android:orientation="horizontal"
-        app:layout_constraintTop_toBottomOf="@id/lContacto"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
         android:layout_margin="10dp"
+        android:orientation="horizontal"
         app:layout_constraintBottom_toBottomOf="parent"
-        >
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/lContacto">
 
 
         <ImageView
             android:layout_width="100dp"
             android:layout_height="140dp"
-            android:src="@drawable/ic_outline_cloud_download_24"/>
+            android:src="@drawable/ic_outline_cloud_download_24" />
 
         <ImageView
             android:id="@+id/btnRecursos"
             android:layout_width="match_parent"
-            android:layout_height="140dp"
-            android:src="@drawable/archivos" />
+            android:layout_height="match_parent"
+            android:src="@drawable/archivos"
+            android:background="@drawable/border"/>
 
 
     </LinearLayout>

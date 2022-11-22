@@ -21,20 +21,19 @@ private const val ARG_PARAM1 = "param1"
 private const val ARG_PARAM2 = "param2"
 
 class Horario : Fragment() {
-    private var _binding: FragmentHorarioBinding?=null
-    private val binding :FragmentHorarioBinding
-    get() = _binding!!
+    private var _binding: FragmentHorarioBinding? = null
+    private val binding: FragmentHorarioBinding
+        get() = _binding!!
 
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View=
+    ): View =
         FragmentHorarioBinding
-            .inflate(inflater,container,false)
-            .also { _binding=it }
+            .inflate(inflater, container, false)
+            .also { _binding = it }
             .root
-
 
 
     @RequiresApi(Build.VERSION_CODES.O)
@@ -46,38 +45,62 @@ class Horario : Fragment() {
     }
 
 
-
     @RequiresApi(Build.VERSION_CODES.M)
-    private fun setupListener()= with(binding){
-       val ActivityMainHorario=(requireActivity()as AppCompatActivity)
-       btnNotificar.setOnClickListener {
-           scheduleNotification()
-       }
-   }
+    private fun setupListener() = with(binding) {
+        val ActivityMainHorario = (requireActivity() as AppCompatActivity)
+        btnNotificar.setOnClickListener {
+            scheduleNotification()
+        }
+    }
 
     @SuppressLint("NewApi")
     @RequiresApi(Build.VERSION_CODES.M)
-    private fun scheduleNotification()= with(binding) {
-        val intent = Intent(context, Notificar::class.java)
-        val title = binding.Tituloet.text.toString()
-        val mesage = binding.messageet.text.toString()
-        intent.putExtra(titleExtra, title)
-        intent.putExtra(messagueExtra, mesage)
+    private fun scheduleNotification(): Boolean = with(binding) {
 
-        val pendingIntent = PendingIntent.getBroadcast(
-            context,
-            notificacionID,
-            intent, PendingIntent.FLAG_IMMUTABLE or PendingIntent.FLAG_UPDATE_CURRENT
-        )
 
-        val alarmManager = requireActivity().getSystemService(Context.ALARM_SERVICE) as AlarmManager
-       val time = getTime()
-        alarmManager.setAndAllowWhileIdle(
-            AlarmManager.RTC_WAKEUP,
-            time,
-            pendingIntent
-        )
-        showAlert(time, title, mesage)
+        var retorno = true
+
+        if (binding.Tituloet.text.toString().isEmpty()) {
+            binding.Tituloet.setError("Este campo no puede quedar vacio")
+            retorno = false
+        }
+        if (binding.messageet.text.toString().isEmpty()) {
+            binding.messageet.setError("Este campo esta vacio")
+            retorno = false
+        } else {
+
+            val intent = Intent(context, Notificar::class.java)
+            val title = binding.Tituloet.text.toString()
+            val mesage = binding.messageet.text.toString()
+            intent.putExtra(titleExtra, title)
+            intent.putExtra(messagueExtra, mesage)
+
+            val pendingIntent =
+                PendingIntent.getBroadcast(
+                    context,
+                    notificacionID,
+                    intent,
+                    PendingIntent.FLAG_IMMUTABLE or PendingIntent.FLAG_UPDATE_CURRENT
+                )
+
+            val alarmManager =
+                requireActivity().getSystemService(Context.ALARM_SERVICE) as AlarmManager
+            val time = getTime()
+            alarmManager.setAndAllowWhileIdle(
+                AlarmManager.RTC_WAKEUP,
+                time,
+                pendingIntent
+            )
+            showAlert(time, title, mesage)
+            binding.Tituloet.setText("")
+            binding.messageet.setText("")
+
+        }
+
+
+
+
+        return true
     }
 
     private fun showAlert(time: Long, title: String, mesage: String) {
@@ -90,15 +113,16 @@ class Horario : Fragment() {
             .setMessage(
                 "Titulo" + title +
                         "\nMensaje" + mesage +
-                        "\nAT"+dateFormat.format(date)+""+timeFormat.format(date))
-            .setPositiveButton("okay"){_,_->}.show()
+                        "\nAT" + dateFormat.format(date) + "" + timeFormat.format(date)
+            )
+            .setPositiveButton("okay") { _, _ -> }.show()
 
     }
 
 
     @RequiresApi(Build.VERSION_CODES.N)
     private fun getTime(): Long = with(binding) {
-        val minute =binding.TimePicker.minute
+        val minute = binding.TimePicker.minute
         val hora = binding.TimePicker.hour
         val dia = binding.DatePicker.dayOfMonth
         val mes = binding.DatePicker.month
@@ -117,7 +141,8 @@ class Horario : Fragment() {
         val importance = NotificationManager.IMPORTANCE_DEFAULT
         val channel = NotificationChannel(channelsID, name, importance)
         channel.description = desc
-        val manager = requireActivity().getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager
+        val manager =
+            requireActivity().getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager
         manager.createNotificationChannel(channel)
 
 

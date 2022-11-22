@@ -52,7 +52,7 @@ class contacto : Fragment() {
 
     }
 
-    fun GuardarLista() {
+    fun GuardarLista(): Boolean {
         val nombre = binding.etNombre.text.toString()
         val corre = binding.etCorreo.text.toString()
         val telefono = binding.etTelefono.text.toString()
@@ -60,27 +60,49 @@ class contacto : Fragment() {
         val notas = binding.etNotas.text.toString()
         val lstnombres = activity?.findViewById<Spinner>(R.id.lstNombres)
 
-        listaD.add(
-            Datos(
-                nombre,
-                corre,
-                telefono.toInt(),
-                ubicacion,
-                notas
+        var retorno = true
+
+
+        if (binding.etNombre.text.toString().isEmpty()) {
+            binding.etNombre.setError("Este campo no puede estar vacio")
+            retorno = false
+        }
+        if (binding.etCorreo.text.toString().isEmpty()) {
+            binding.etCorreo.setError("Este campo no puede estar vacio")
+            retorno = false
+        }
+        if (binding.etTelefono.text.toString().isEmpty()) {
+            binding.etTelefono.setError("Este campo no puede estar vacio")
+            retorno = false
+        }
+        if (binding.etUbicacion.text.toString().isEmpty()) {
+            binding.etUbicacion.setError("Este campo no puede estar vacio")
+            retorno = false
+        }
+        if (binding.etNotas.text.toString().isEmpty()) {
+            binding.etNotas.setError("Este campo esta no puede quear vacio")
+            retorno = false
+        } else {
+            listaD.add(Datos(nombre, corre, telefono.toInt(), ubicacion, notas))
+            Toast.makeText(context, "Agregado a la lista", Toast.LENGTH_SHORT).show()
+
+            binding.etNombre.setText("")
+            binding.etCorreo.setText("")
+            binding.etTelefono.setText("")
+            binding.etUbicacion.setText("")
+            binding.etNotas.setText("")
+
+
+            listaN.add(nombre)
+            val llenarSpinner: ArrayAdapter<String> = ArrayAdapter<String>(
+                requireActivity().applicationContext,
+                android.R.layout.simple_spinner_item,
+                listaN
             )
-        )
-
-        Toast.makeText(context, "Agregado a la lista", Toast.LENGTH_SHORT).show()
-        listaN.add(nombre)
-        val llenarSpinner: ArrayAdapter<String> = ArrayAdapter<String>(
-            requireActivity().applicationContext,
-            android.R.layout.simple_spinner_item,
-            listaN
-        )
-        llenarSpinner.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
-        lstnombres?.adapter = llenarSpinner
-
-
+            llenarSpinner.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
+            lstnombres?.adapter = llenarSpinner
+        }
+        return true
     }
 
     fun GuardarEnArchivo() {
