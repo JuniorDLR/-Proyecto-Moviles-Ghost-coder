@@ -15,7 +15,7 @@
         android:text="@string/mis_clasess"
         android:textAlignment="center"
         android:textColor="@color/black"
-        android:textSize="50sp"
+        android:textSize="20sp"
         android:textStyle="bold"
         tools:layout_editor_absoluteX="0dp"
         tools:layout_editor_absoluteY="-2dp" />
