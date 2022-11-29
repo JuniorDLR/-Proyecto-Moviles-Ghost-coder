@@ -154,7 +154,7 @@
         android:src="@drawable/ic_baseline_person_search_24"
         android:text="Mostrar contacto"
         android:textAllCaps="false"
-        android:textColor="#FFEB3B"
+        android:textColor="#4F65DD"
         app:layout_constraintStart_toEndOf="@+id/btnLeer"
         app:layout_constraintTop_toBottomOf="@+id/lstNombres"
         tools:ignore="TextContrastCheck" />
